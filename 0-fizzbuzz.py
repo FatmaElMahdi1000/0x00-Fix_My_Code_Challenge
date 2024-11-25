@@ -17,7 +17,7 @@ def fizzbuzz(n):
 
     tmp_result = []
     for i in range(1, n + 1):
-        if (i % 3) == 0:
+        if (i % 3) == 0 and (i % 5) == 0: 
             tmp_result.append("Fizz")
         elif (i % 3) == 0 and (i % 5) == 0:
             tmp_result.append("FizzBuzz")
@@ -35,5 +35,9 @@ if __name__ == '__main__':
         print("Example: ./0-fizzbuzz.py 89")
         sys.exit(1)
 
+try:
     number = int(sys.argv[1])
     fizzbuzz(number)
+except ValueError:
+    print("input must be int.")
+    sys.exit(1)
